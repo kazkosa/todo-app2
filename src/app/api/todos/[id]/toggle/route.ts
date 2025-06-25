@@ -1,10 +1,8 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 
-type Params = { params: { id: string } };
-
-export async function PATCH(_: Request, { params }: Params) {
-  const { id } = params;
+export async function PATCH(_: Request, { params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
 
   const todo = await prisma.todo.findUnique({ where: { id } });
   if (!todo) {
