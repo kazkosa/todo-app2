@@ -18,7 +18,7 @@ Currently it is public, but may be made private in the future depending on circu
 - **Prisma ORM**
 - **PostgreSQL**
 - **Tailwind CSS**
-- **Vercel (本番ホスティング)**
+- **Vercel (Production Hosting)**
 
 ## 🚩 Main Features
 
