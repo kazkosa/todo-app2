@@ -27,8 +27,12 @@ export default function Home() {
       const data = await res.json();
       setTodos(data);
       setError(null);
-    } catch (err: any) {
-      setError(err.message || 'An unknown error has occurred');
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        console.error('Error message:', e.message);
+      } else {
+        console.error('Unexpected error', e);
+      }
     } finally {
       setLoading(false);
     }
@@ -43,8 +47,12 @@ export default function Home() {
       });
       if (!res.ok) throw new Error('Add failed');
       await fetchTodos();
-    } catch (err: any) {
-      setError(err.message || 'An error occurred when adding');
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        console.error('Error message:', e.message);
+      } else {
+        console.error('Unexpected error', e);
+      }
     }
   };
 
@@ -55,8 +63,12 @@ export default function Home() {
       });
       if (!res.ok) throw new Error('Delete failed');
       await fetchTodos();
-    } catch (err: any) {
-      setError(err.message || 'An error occurred during deletion');
+    } catch (e: unknown) {
+      if (e instanceof Error) {
+        console.error('Error message:', e.message);
+      } else {
+        console.error('Unexpected error', e);
+      }
     }
   };
 
@@ -67,8 +79,12 @@ export default function Home() {
       });
       if (!res.ok) throw new Error('State change failed');
       await fetchTodos();
-    } catch (err: any) {
-      setError(err.message || 'An error occurred during update');
+        } catch (e: unknown) {
+      if (e instanceof Error) {
+        console.error('Error message:', e.message);
+      } else {
+        console.error('Unexpected error', e);
+      }
     }
   };
 

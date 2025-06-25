@@ -10,7 +10,7 @@ type Props = {
 
 export default function TodoList({ todos, onToggle, onDelete }: Props) {
   if (todos.length === 0) {
-    return <p className="text-gray-500 mt-4">There's nothing to do yet.</p>;
+    return <p className="text-gray-500 mt-4">There&apos;s nothing to do yet.</p>;
   }
 
   return (
