@@ -73,8 +73,7 @@ $ npm run dev
 ```
 
 ### 6. Access the app
-http://localhost:3000 にアクセスして、Todoアプリが表示されるか確認してください
-
+Open http://localhost:3000 to see the Todo app running.
 
 
 ## ⚠️ Notes
